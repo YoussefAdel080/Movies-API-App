@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/kYslAQ9kxc=",
+  "dgSpecHash": "/yy15hm5D3o=",
   "success": true,
   "projectFilePath": "C:\\GitHub\\Movies-API-App\\Movies\\Movies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UTD\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\UTD\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.6\\microsoft.extensions.dependencyinjection.10.0.6.nupkg.sha512",
     "C:\\Users\\UTD\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.6\\microsoft.extensions.dependencyinjection.abstractions.10.0.6.nupkg.sha512",
     "C:\\Users\\UTD\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
     "C:\\Users\\UTD\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.12\\microsoft.windowsdesktop.app.ref.9.0.12.nupkg.sha512",
