@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Movies.Application.csproj",
+      "projectUniqueName": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Movies.Application.csproj",
       "projectName": "Movies.Application",
-      "projectPath": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Movies.Application.csproj",
+      "projectPath": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Movies.Application.csproj",
       "packagesPath": "C:\\Users\\UTD\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\obj\\",
+      "outputPath": "C:\\GitHub\\Movies-API-App\\Movies.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

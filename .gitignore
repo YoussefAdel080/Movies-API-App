@@ -1,0 +1,86 @@
+# =========================
+# Build folders
+# =========================
+bin/
+obj/
+out/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Rider / VS Code
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Keep lock file (important for reproducibility)
+!packages.lock.json
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+
+# =========================
+# ASP.NET Core
+# =========================
+wwwroot/uploads/
+wwwroot/temp/
+
+# =========================
+# Entity Framework
+# =========================
+Migrations/*.Designer.cs
+
+# =========================
+# Publish output
+# =========================
+publish/
+*.publishsettings
+
+# =========================
+# Node (if using Angular/React frontend inside project)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Coverage / Testing
+# =========================
+coverage/
+TestResults/
+*.trx
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp

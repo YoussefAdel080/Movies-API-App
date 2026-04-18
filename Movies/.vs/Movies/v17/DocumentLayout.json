@@ -1,12 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\UTD\\source\\repos\\Movies\\",
+  "WorkspaceRootPath": "C:\\GitHub\\Movies-API-App\\Movies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\users\\utd\\source\\repos\\movies.contracts\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\users\\utd\\source\\repos\\movies.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\movies.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:movies.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,8 +26,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs*",
+              "RelativeToolTip": "Controllers\\MoviesController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:11:34.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-18T03:10:48.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:09:53.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movies.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Movies.csproj",
+              "RelativeDocumentMoniker": "Movies.csproj",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Movies.csproj*",
+              "RelativeToolTip": "Movies.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-18T00:19:16.075Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -33,32 +95,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1928210406:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\UTD\\source\\repos\\Movies.Contracts\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Class1.cs",
-              "ToolTip": "C:\\Users\\UTD\\source\\repos\\Movies.Contracts\\Class1.cs",
-              "RelativeToolTip": "..\\Movies.Contracts\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T22:32:17.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Application\\Class1.cs",
-              "ToolTip": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Class1.cs",
-              "RelativeToolTip": "..\\Movies.Application\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T22:31:02.232Z",
-              "EditorCaption": ""
             }
           ]
         }
