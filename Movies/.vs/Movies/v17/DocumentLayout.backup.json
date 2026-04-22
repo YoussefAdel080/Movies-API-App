@@ -1,12 +1,35 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\UTD\\source\\repos\\Movies\\",
+  "WorkspaceRootPath": "C:\\GitHub\\Movies-API-App\\Movies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\users\\utd\\source\\repos\\movies.contracts\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\users\\utd\\source\\repos\\movies.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\movies.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:movies.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\responses\\movieresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\requests\\createmovierequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\requests\\updatemovierequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,7 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,28 +59,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\UTD\\source\\repos\\Movies.Contracts\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Class1.cs",
-              "ToolTip": "C:\\Users\\UTD\\source\\repos\\Movies.Contracts\\Class1.cs",
-              "RelativeToolTip": "..\\Movies.Contracts\\Class1.cs",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T22:32:17.435Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-20T01:36:06.479Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Application\\Class1.cs",
-              "ToolTip": "C:\\Users\\UTD\\source\\repos\\Movies.Application\\Class1.cs",
-              "RelativeToolTip": "..\\Movies.Application\\Class1.cs",
+              "Title": "Movies.http",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Movies.http",
+              "RelativeDocumentMoniker": "Movies.http",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Movies.http",
+              "RelativeToolTip": "Movies.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-04-20T01:35:57.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-20T01:35:51.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T02:47:48.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateMovieRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\UpdateMovieRequest.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Requests\\UpdateMovieRequest.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\UpdateMovieRequest.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Requests\\UpdateMovieRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:56:49.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateMovieRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T22:31:02.232Z",
+              "WhenOpened": "2026-04-18T03:56:49.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovieResponse.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\MovieResponse.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Responses\\MovieResponse.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\MovieResponse.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Responses\\MovieResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:55:31.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:47:33.941Z",
               "EditorCaption": ""
             }
           ]
