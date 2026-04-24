@@ -28,6 +28,7 @@ namespace Movies.Mapping
             return new MovieResponse
             {
                 Id = Guid.NewGuid(),
+                Slug = request.Slug,
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
                 Genres = request.Genres.ToList()

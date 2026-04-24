@@ -9,8 +9,10 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();
+builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 

@@ -26,9 +26,11 @@ namespace Movies.Controllers
         }
 
         [HttpGet($"{ApiEndpoints.Movies.Get}")]
-        public async Task<IActionResult> Get([FromRoute] Guid id)
+        public async Task<IActionResult> Get([FromRoute] string idOrSlug)
         {
-            var movie = await _movieRepository.GetByIdAsync(id);
+            var movie = Guid.TryParse(idOrSlug, out var id)
+                ? await _movieRepository.GetByIdAsync(id)
+                : await _movieRepository.GetBySlugAsync(idOrSlug);
             if (movie == null)
             {
                 return NotFound();
@@ -42,7 +44,7 @@ namespace Movies.Controllers
             var movie = request.MapToMovie();
             await _movieRepository.CreateAsync(movie);
 
-            return CreatedAtAction(nameof(Get), new { id = movie.Id }, movie);
+            return CreatedAtAction(nameof(Get), new { idOrSlug = movie.Id }, movie);
         }
 
         [HttpPut($"{ApiEndpoints.Movies.Update}")]
