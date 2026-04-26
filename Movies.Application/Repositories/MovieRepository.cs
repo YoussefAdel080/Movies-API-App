@@ -1,44 +1,80 @@
-﻿using Movies.Application.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Movies.Application.Contexts;
+using Movies.Application.Models;
 
 namespace Movies.Application.Repositories;
 
 public class MovieRepository : IMovieRepository
 {
-    private readonly List<Movie> _movies = new();
+    private readonly MovieContext _context;
 
-    public Task<bool> CreateAsync(Movie movie)
+    public MovieRepository(MovieContext context)
     {
-        _movies.Add(movie);
-        return Task.FromResult(true);
+        _context = context;
     }
 
-    public Task<Movie?> GetByIdAsync(Guid id)
+    public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)
     {
-        var movie = _movies.SingleOrDefault(x => x.Id == id);
-        return Task.FromResult(movie);
-    }
+        var movieEntity = await _context.Movies.AddAsync(movie);
 
-    public Task<IEnumerable<Movie>> GetAllAsync()
-    {
-        return Task.FromResult(_movies.AsEnumerable());
-    }
-
-    public Task<bool> UpdateAsync(Movie movie)
-    {
-        var movieIndex = _movies.FindIndex(x => x.Id == movie.Id);
-        if (movieIndex == -1)
+        if (movieEntity == null)
         {
-            return Task.FromResult(false);
+            return false;
         }
 
-        _movies[movieIndex] = movie;
-        return Task.FromResult(true);
+        foreach (var genreName in genres)
+        {
+            var genre = new Genre
+            {
+                Id = Guid.NewGuid(),
+                Name = genreName,
+                MovieId = movie.Id
+            };
+
+            _context.Genres.Add(genre);
+        }
+
+        await _context.SaveChangesAsync();
+        return true;
     }
 
-    public Task<bool> DeleteByIdAsync(Guid id)
+    public async Task<Movie?> GetByIdAsync(Guid id)
     {
-        var removedCount = _movies.RemoveAll(x => x.Id == id);
-        var movieRemoved = removedCount > 0; 
-        return Task.FromResult(movieRemoved);
+        return await _context.Movies.FindAsync(id);
+    }
+
+    public async Task<Movie?> GetBySlugAsync(string slug)
+    {
+        if (string.IsNullOrWhiteSpace(slug))
+        {
+            return null;
+        }
+
+        // Slug is derived; load candidates (acceptable for current scale) or add persisted Slug for indexes later.
+        var list = await _context.Movies.AsNoTracking().ToListAsync();
+        return list.FirstOrDefault(m => string.Equals(m.Slug, slug, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public async Task<IEnumerable<Movie>> GetAllAsync()
+    {
+        return await _context.Movies.AsNoTracking().ToListAsync();
+    }
+
+    public async Task<bool> UpdateAsync(Movie movie)
+    {
+        _context.Movies.Update(movie);
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<bool> DeleteByIdAsync(Guid id)
+    {
+        var existing = await _context.Movies.FindAsync(id);
+        if (existing is null)
+        {
+            return false;
+        }
+
+        _context.Movies.Remove(existing);
+        return await _context.SaveChangesAsync() > 0;
     }
 }

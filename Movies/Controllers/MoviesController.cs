@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Movies.Application.Models;
 using Movies.Application.Repositories;
 using Movies.Contracts.Requests;
 using Movies.Mapping;
-using System.Data.Common;
 
 namespace Movies.Controllers
 {
@@ -42,7 +40,7 @@ namespace Movies.Controllers
         public async Task<IActionResult> Create([FromBody]CreateMovieRequest request) 
         {
             var movie = request.MapToMovie();
-            await _movieRepository.CreateAsync(movie);
+            await _movieRepository.CreateAsync(movie, request.Genres);
 
             return CreatedAtAction(nameof(Get), new { idOrSlug = movie.Id }, movie);
         }

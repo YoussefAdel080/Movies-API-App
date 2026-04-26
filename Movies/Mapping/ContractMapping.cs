@@ -12,7 +12,6 @@ namespace Movies.Mapping
                 Id = Guid.NewGuid(),
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
-                Genres = request.Genres.ToList()
             };
         }
         public static Movie MapToMovie(this UpdateMovieRequest request, Guid id) {
@@ -21,26 +20,32 @@ namespace Movies.Mapping
                 Id = id,
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
-                Genres = request.Genres.ToList()
-            };
-        }
-        public static MovieResponse MapToResponse(this Movie request) {
-            return new MovieResponse
-            {
-                Id = Guid.NewGuid(),
-                Slug = request.Slug,
-                Title = request.Title,
-                YearOfRelease = request.YearOfRelease,
-                Genres = request.Genres.ToList()
-            };
-        }
-        public static MoviesResponse MapToResponse(this IEnumerable<Movie> movies) {
-            return new MoviesResponse
-            {
-                Items = movies.Select(MapToResponse)
             };
         }
 
-        
+        public static MovieResponse MapToResponse(this Movie request, IEnumerable<string> genres) {
+            return new MovieResponse
+            {
+                Id = request.Id,
+                Slug = request.Slug,
+                Title = request.Title,
+                YearOfRelease = request.YearOfRelease,
+                Genres = genres
+            };
+        }
+        public static MoviesResponse MapToResponse(
+        this IEnumerable<Movie> movies,
+        Dictionary<Guid, List<string>> genresLookup)
+        {
+           return new MoviesResponse
+           {
+                Items = movies.Select(movie =>
+                movie.MapToResponse(
+                    genresLookup.ContainsKey(movie.Id)
+                    ? genresLookup[movie.Id]
+                    : new List<string>()
+                    ))
+           };
+        }
     }
 }
