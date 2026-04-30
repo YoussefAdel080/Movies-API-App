@@ -2,7 +2,7 @@
 
 namespace Movies.Application.Repositories;
 
-public interface IMovieRepository
+public interface IMovieService
 {
     Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres);
 
@@ -15,4 +15,5 @@ public interface IMovieRepository
     Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres);
 
     Task<bool> DeleteByIdAsync(Guid id);
+    Task<bool> ExistsByIdAsync(Guid id);
 }

@@ -4,7 +4,7 @@ using Movies.Application.Models;
 
 namespace Movies.Application.Repositories;
 
-public class MovieRepository : IMovieRepository
+public class MovieRepository : IMovieService
 {
     private readonly MovieContext _context;
 
@@ -144,5 +144,11 @@ public class MovieRepository : IMovieRepository
             .Where(g => g.MovieId == movieId)
             .Select(g => g.Name)
             .ToListAsync();
+    }
+
+    public async Task<bool> ExistsByIdAsync(Guid id)
+    {
+        var movieExiste = await _context.Movies.FindAsync(id);
+        return movieExiste != null;
     }
 }
