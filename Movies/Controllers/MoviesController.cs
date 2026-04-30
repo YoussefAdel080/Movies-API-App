@@ -16,9 +16,9 @@ public class MoviesController : ControllerBase
     }
 
     [HttpGet($"{ApiEndpoints.Movies.GetAll}")]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll(CancellationToken token)
     {
-        var movies = await _movieService.GetAllAsync();
+        var movies = await _movieService.GetAllAsync(token);
 
         var response = new MoviesResponse
         {
@@ -30,11 +30,11 @@ public class MoviesController : ControllerBase
     }
 
     [HttpGet($"{ApiEndpoints.Movies.Get}")]
-    public async Task<IActionResult> Get([FromRoute] string idOrSlug)
+    public async Task<IActionResult> Get([FromRoute] string idOrSlug, CancellationToken token)
     {
         var movie = Guid.TryParse(idOrSlug, out var id)
-            ? await _movieService.GetByIdAsync(id)
-            : await _movieService.GetBySlugAsync(idOrSlug);
+            ? await _movieService.GetByIdAsync(id, token)
+            : await _movieService.GetBySlugAsync(idOrSlug, token);
 
         if (movie == null)
         {
@@ -45,14 +45,14 @@ public class MoviesController : ControllerBase
     }
 
     [HttpPost($"{ApiEndpoints.Movies.Create}")]
-    public async Task<IActionResult> Create([FromBody] CreateMovieRequest request)
+    public async Task<IActionResult> Create([FromBody] CreateMovieRequest request, CancellationToken token)
     {
         var movie = request.MapToMovie();
 
-        await _movieService.CreateAsync(movie, request.Genres);
+        await _movieService.CreateAsync(movie, request.Genres, token);
 
         // fetch genres again for response
-        var created = await _movieService.GetByIdAsync(movie.Id);
+        var created = await _movieService.GetByIdAsync(movie.Id, token);
 
         return CreatedAtAction(
             nameof(Get),
@@ -64,11 +64,12 @@ public class MoviesController : ControllerBase
     [HttpPut($"{ApiEndpoints.Movies.Update}")]
     public async Task<IActionResult> Update(
         [FromRoute] Guid id,
-        [FromBody] UpdateMovieRequest request)
+        [FromBody] UpdateMovieRequest request,
+        CancellationToken token = default)
     {
         var movie = request.MapToMovie(id);
 
-        var updated = await _movieService.UpdateAsync(movie, request.Genres);
+        var updated = await _movieService.UpdateAsync(movie, request.Genres, token);
 
         if (updated == null)
         {
@@ -79,9 +80,9 @@ public class MoviesController : ControllerBase
     }
 
     [HttpDelete($"{ApiEndpoints.Movies.Delete}")]
-    public async Task<IActionResult> Delete([FromRoute] Guid id)
+    public async Task<IActionResult> Delete([FromRoute] Guid id, CancellationToken token)
     {
-        var deleted = await _movieService.DeleteByIdAsync(id);
+        var deleted = await _movieService.DeleteByIdAsync(id, token);
 
         if (!deleted)
         {

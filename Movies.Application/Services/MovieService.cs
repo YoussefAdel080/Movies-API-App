@@ -14,40 +14,40 @@ namespace Movies.Application.Services
             _movieRepository = movieRepository;
             _movieValidator = movieValidator;
         }
-        public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)
+        public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
         {
-            await _movieValidator.ValidateAndThrowAsync(movie);
-            return await _movieRepository.CreateAsync(movie, genres);
+            await _movieValidator.ValidateAndThrowAsync(movie, cancellationToken: token);
+            return await _movieRepository.CreateAsync(movie, genres, token);
         }
 
-        public Task<bool> DeleteByIdAsync(Guid id)
+        public Task<bool> DeleteByIdAsync(Guid id, CancellationToken token = default)
         {
-            return _movieRepository.DeleteByIdAsync(id);
+            return _movieRepository.DeleteByIdAsync(id, token);
         }
 
-        public Task<IEnumerable<MovieWithGenres>> GetAllAsync()
+        public Task<IEnumerable<MovieWithGenres>> GetAllAsync(CancellationToken token = default)
         {
-            return _movieRepository.GetAllAsync();
+            return _movieRepository.GetAllAsync(token);
         }
 
-        public Task<MovieWithGenres?> GetByIdAsync(Guid id)
+        public Task<MovieWithGenres?> GetByIdAsync(Guid id, CancellationToken token = default)
         {
-            return _movieRepository.GetByIdAsync(id);
+            return _movieRepository.GetByIdAsync(id, token);
         }
 
-        public Task<MovieWithGenres?> GetBySlugAsync(string slug)
+        public Task<MovieWithGenres?> GetBySlugAsync(string slug, CancellationToken token = default)
         {
-            return _movieRepository.GetBySlugAsync(slug);
+            return _movieRepository.GetBySlugAsync(slug, token);
         }
 
-        public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres)
+        public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
         {
-            await _movieValidator.ValidateAndThrowAsync(movie);
-            var movieExists = await _movieRepository.ExistsByIdAsync(movie.Id);
+            await _movieValidator.ValidateAndThrowAsync(movie, cancellationToken: token);
+            var movieExists = await _movieRepository.ExistsByIdAsync(movie.Id, token);
             if (!movieExists) {
                 return null;
             };
-            var movieWithGenres = await _movieRepository.UpdateAsync(movie, genres);
+            var movieWithGenres = await _movieRepository.UpdateAsync(movie, genres, token);
             return movieWithGenres;
         }
 

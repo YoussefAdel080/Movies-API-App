@@ -13,9 +13,9 @@ public class MovieRepository : IMovieRepository
         _context = context;
     }
 
-    public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)
+    public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
     {
-        await _context.Movies.AddAsync(movie);
+        await _context.Movies.AddAsync(movie, token);
 
         foreach (var genreName in genres)
         {
@@ -27,18 +27,18 @@ public class MovieRepository : IMovieRepository
             });
         }
 
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(token);
         return true;
     }
 
-    public async Task<MovieWithGenres?> GetByIdAsync(Guid id)
+    public async Task<MovieWithGenres?> GetByIdAsync(Guid id, CancellationToken token = default)
     {
-        var movie = await _context.Movies.FindAsync(id);
+        var movie = await _context.Movies.FindAsync(id, token);
 
         if (movie == null)
             return null;
 
-        var genres = await GetGenresForMovie(movie.Id);
+        var genres = await GetGenresForMovie(movie.Id, token);
 
         return new MovieWithGenres
         {
@@ -47,12 +47,12 @@ public class MovieRepository : IMovieRepository
         };
     }
 
-    public async Task<MovieWithGenres?> GetBySlugAsync(string slug)
+    public async Task<MovieWithGenres?> GetBySlugAsync(string slug, CancellationToken token = default)
     {
         if (string.IsNullOrWhiteSpace(slug))
             return null;
 
-        var movies = await _context.Movies.AsNoTracking().ToListAsync();
+        var movies = await _context.Movies.AsNoTracking().ToListAsync(token);
 
         var movie = movies.FirstOrDefault(m =>
             string.Equals(m.Slug, slug, StringComparison.OrdinalIgnoreCase));
@@ -60,7 +60,7 @@ public class MovieRepository : IMovieRepository
         if (movie == null)
             return null;
 
-        var genres = await GetGenresForMovie(movie.Id);
+        var genres = await GetGenresForMovie(movie.Id, token);
 
         return new MovieWithGenres
         {
@@ -69,10 +69,10 @@ public class MovieRepository : IMovieRepository
         };
     }
 
-    public async Task<IEnumerable<MovieWithGenres>> GetAllAsync()
+    public async Task<IEnumerable<MovieWithGenres>> GetAllAsync(CancellationToken token = default)
     {
-        var movies = await _context.Movies.AsNoTracking().ToListAsync();
-        var genres = await _context.Genres.AsNoTracking().ToListAsync();
+        var movies = await _context.Movies.AsNoTracking().ToListAsync(token);
+        var genres = await _context.Genres.AsNoTracking().ToListAsync(token);
 
         var lookup = genres
             .GroupBy(g => g.MovieId)
@@ -88,9 +88,9 @@ public class MovieRepository : IMovieRepository
         });
     }
 
-    public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres)
+    public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
     {
-        var existing = await _context.Movies.FindAsync(movie.Id);
+        var existing = await _context.Movies.FindAsync(movie.Id, token);
 
         if (existing == null)
             return null;
@@ -114,7 +114,7 @@ public class MovieRepository : IMovieRepository
             });
         }
 
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(token);
 
         return new MovieWithGenres
         {
@@ -123,9 +123,9 @@ public class MovieRepository : IMovieRepository
         };
     }
 
-    public async Task<bool> DeleteByIdAsync(Guid id)
+    public async Task<bool> DeleteByIdAsync(Guid id, CancellationToken token = default)
     {
-        var movie = await _context.Movies.FindAsync(id);
+        var movie = await _context.Movies.FindAsync(id, token);
 
         if (movie == null)
             return false;
@@ -135,20 +135,20 @@ public class MovieRepository : IMovieRepository
         _context.Genres.RemoveRange(genres);
         _context.Movies.Remove(movie);
 
-        return await _context.SaveChangesAsync() > 0;
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
-    private async Task<List<string>> GetGenresForMovie(Guid movieId)
+    private async Task<List<string>> GetGenresForMovie(Guid movieId, CancellationToken token = default)
     {
         return await _context.Genres
             .Where(g => g.MovieId == movieId)
             .Select(g => g.Name)
-            .ToListAsync();
+            .ToListAsync(token);
     }
 
-    public async Task<bool> ExistsByIdAsync(Guid id)
+    public async Task<bool> ExistsByIdAsync(Guid id, CancellationToken token = default)
     {
-        var movieExiste = await _context.Movies.FindAsync(id);
+        var movieExiste = await _context.Movies.FindAsync(id, token);
         return movieExiste != null;
     }
 }
