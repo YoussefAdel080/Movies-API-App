@@ -1,18 +1,23 @@
-﻿using Movies.Application.Models;
+﻿using FluentValidation;
+using Movies.Application.Models;
 using Movies.Application.Repositories;
+using Movies.Application.Validators;
 
 namespace Movies.Application.Services
 {
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
+        private readonly MovieValidator _movieValidator;
 
-        public MovieService(IMovieRepository movieRepository) { 
+        public MovieService(IMovieRepository movieRepository, MovieValidator movieValidator) { 
             _movieRepository = movieRepository;
+            _movieValidator = movieValidator;
         }
-        public Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)
+        public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)
         {
-            return _movieRepository.CreateAsync(movie, genres);
+            await _movieValidator.ValidateAndThrowAsync(movie);
+            return await _movieRepository.CreateAsync(movie, genres);
         }
 
         public Task<bool> DeleteByIdAsync(Guid id)
@@ -37,6 +42,7 @@ namespace Movies.Application.Services
 
         public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres)
         {
+            await _movieValidator.ValidateAndThrowAsync(movie);
             var movieExists = await _movieRepository.ExistsByIdAsync(movie.Id);
             if (!movieExists) {
                 return null;
