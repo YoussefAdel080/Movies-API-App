@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Movies;
-using Movies.Application.Repositories;
+using Movies.Application.Services;
 using Movies.Contracts.Requests;
 using Movies.Contracts.Responses;
 using Movies.Mapping;

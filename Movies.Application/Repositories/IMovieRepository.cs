@@ -2,7 +2,7 @@
 
 namespace Movies.Application.Repositories;
 
-public interface IMovieService
+public interface IMovieRepository
 {
     Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres);
 

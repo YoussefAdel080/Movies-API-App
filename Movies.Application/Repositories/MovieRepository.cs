@@ -4,7 +4,7 @@ using Movies.Application.Models;
 
 namespace Movies.Application.Repositories;
 
-public class MovieRepository : IMovieService
+public class MovieRepository : IMovieRepository
 {
     private readonly MovieContext _context;
 

@@ -5,9 +5,9 @@ namespace Movies.Application.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IMovieService _movieRepository;
+        private readonly IMovieRepository _movieRepository;
 
-        public MovieService(IMovieService movieRepository) { 
+        public MovieService(IMovieRepository movieRepository) { 
             _movieRepository = movieRepository;
         }
         public Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres)

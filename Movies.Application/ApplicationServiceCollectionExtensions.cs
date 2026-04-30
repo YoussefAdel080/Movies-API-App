@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Movies.Application.Contexts;
 using Movies.Application.Repositories;
+using Movies.Application.Services;
 
 namespace Movies.Application;
 
@@ -10,7 +11,8 @@ public static class ApplicationServiceCollectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddScoped<IMovieService, MovieRepository>();
+        services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<IMovieService, MovieService>();
         return services;
     }
 
