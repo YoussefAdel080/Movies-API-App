@@ -7,8 +7,10 @@ namespace Movies.Application.Validators
     public class MovieValidator : AbstractValidator<Movie>
     {
         private IMovieRepository _movieRepository;
-        public MovieValidator()
+        public MovieValidator(IMovieRepository movieRepository)
         {
+            _movieRepository = movieRepository;
+
             RuleFor(m => m.Id)
                 .NotEmpty();
 

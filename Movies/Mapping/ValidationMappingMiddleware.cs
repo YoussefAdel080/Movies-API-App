@@ -16,7 +16,7 @@ namespace Movies.Mapping
         {
             try 
             {
-
+                await _next(context);
             } 
             catch(ValidationException ex)
             {
