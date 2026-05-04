@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\GitHub\\Movies-API-App\\Movies\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,14 +26,6 @@
       "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\UTD\\AppData\\Local\\Temp\\5383b514-4662-4d79-b1ab-5889c9a5f835_Authentication and Authorization in REST APIs_5.1.zip.835\\rest-api-course-final-master\\Helpers\\Identity.Api\\Controllers\\IdentityController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,7 +36,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IdentityController.cs",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\IdentityController.cs",
               "RelativeDocumentMoniker": "Controllers\\IdentityController.cs",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IdentityController.cs",
               "DocumentMoniker": "C:\\Users\\UTD\\AppData\\Local\\Temp\\ecda062f-9ec0-4410-a84c-bb0ccbc218d0_Authentication and Authorization in REST APIs_5.1.zip.8d0\\rest-api-course-final-master\\Helpers\\Identity.Api\\Controllers\\IdentityController.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Users\\UTD\\AppData\\Local\\Temp\\ecda062f-9ec0-4410-a84c-bb0ccbc218d0_Authentication and Authorization in REST APIs_5.1.zip.8d0\\rest-api-course-final-master\\Helpers\\Identity.Api\\Controllers\\IdentityController.cs",
@@ -95,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MoviesController.cs",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
@@ -108,39 +108,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-05-01T20:27:51.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-05-01T20:27:49.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T20:18:49.069Z",
               "EditorCaption": ""

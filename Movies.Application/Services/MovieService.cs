@@ -25,29 +25,29 @@ namespace Movies.Application.Services
             return _movieRepository.DeleteByIdAsync(id, token);
         }
 
-        public Task<IEnumerable<MovieWithGenres>> GetAllAsync(CancellationToken token = default)
+        public Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(Guid? userId = default, CancellationToken token = default)
         {
-            return _movieRepository.GetAllAsync(token);
+            return _movieRepository.GetAllAsync(userId, token);
         }
 
-        public Task<MovieWithGenres?> GetByIdAsync(Guid id, CancellationToken token = default)
+        public Task<MovieWithGenresAndRating?> GetByIdAsync(Guid id, Guid? userId = default, CancellationToken token = default)
         {
-            return _movieRepository.GetByIdAsync(id, token);
+            return _movieRepository.GetByIdAsync(id, userId, token);
         }
 
-        public Task<MovieWithGenres?> GetBySlugAsync(string slug, CancellationToken token = default)
+        public Task<MovieWithGenresAndRating?> GetBySlugAsync(string slug, Guid? userId = default, CancellationToken token = default)
         {
-            return _movieRepository.GetBySlugAsync(slug, token);
+            return _movieRepository.GetBySlugAsync(slug, userId, token);
         }
 
-        public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
+        public async Task<MovieWithGenresAndRating?> UpdateAsync(Movie movie, IEnumerable<string> genres, Guid? userId = default, CancellationToken token = default)
         {
             await _movieValidator.ValidateAndThrowAsync(movie, cancellationToken: token);
             var movieExists = await _movieRepository.ExistsByIdAsync(movie.Id, token);
             if (!movieExists) {
                 return null;
             };
-            var movieWithGenres = await _movieRepository.UpdateAsync(movie, genres, token);
+            var movieWithGenres = await _movieRepository.UpdateAsync(movie, genres, userId, token);
             return movieWithGenres;
         }
 

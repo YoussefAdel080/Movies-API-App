@@ -13,7 +13,9 @@ public static class ApplicationServiceCollectionExtensions
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<IRatingRepository, RatingRepository>();
         services.AddScoped<IMovieService, MovieService>();
+        services.AddScoped<IRatingService, RatingService>();
         services.AddValidatorsFromAssemblyContaining<IApplicationMarker>(ServiceLifetime.Scoped);
         return services;
     }

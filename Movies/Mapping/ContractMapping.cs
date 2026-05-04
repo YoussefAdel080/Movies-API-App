@@ -23,14 +23,16 @@ namespace Movies.Mapping
             };
         }
 
-        public static MovieResponse MapToResponse(this Movie request, IEnumerable<string> genres) {
+        public static MovieResponse MapToResponse(this Movie request, IEnumerable<string> genres, float? rating, int? userRating) {
             return new MovieResponse
             {
                 Id = request.Id,
                 Slug = request.Slug,
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
-                Genres = genres
+                Genres = genres,
+                Rating = rating,
+                UserRating = userRating
             };
         }
         public static MoviesResponse MapToResponse(
@@ -43,7 +45,7 @@ namespace Movies.Mapping
                 movie.MapToResponse(
                     genresLookup.ContainsKey(movie.Id)
                     ? genresLookup[movie.Id]
-                    : new List<string>()
+                    : new List<string>(), null, null
                     ))
            };
         }

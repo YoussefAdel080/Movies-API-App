@@ -13,6 +13,15 @@
             public const string GetAll = Base;
             public const string Update = $"{Base}/{{id:Guid}}";
             public const string Delete = $"{Base}/{{id:Guid}}";
+            public const string Rate = $"{Base}/{{id:Guid}}/ratings";
+            public const string DeleteRating = $"{Base}/{{id:Guid}}/ratings";
+        }
+
+        public class Ratings
+        {
+            private const string Base = $"{ApiBase}/ratings";
+            private const string GetUserRatings = $"{Base}/me";
+
         }
     }
 }

@@ -7,10 +7,12 @@ namespace Movies.Application.Repositories;
 public class MovieRepository : IMovieRepository
 {
     private readonly MovieContext _context;
+    private readonly IRatingRepository _ratingRepository;
 
-    public MovieRepository(MovieContext context)
+    public MovieRepository(MovieContext context, IRatingRepository ratingRepository)
     {
         _context = context;
+        _ratingRepository = ratingRepository;
     }
 
     public async Task<bool> CreateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
@@ -31,7 +33,7 @@ public class MovieRepository : IMovieRepository
         return true;
     }
 
-    public async Task<MovieWithGenres?> GetByIdAsync(Guid id, CancellationToken token = default)
+    public async Task<MovieWithGenresAndRating?> GetByIdAsync(Guid id, Guid? userId = default, CancellationToken token = default)
     {
         var movie = await _context.Movies.FindAsync(id, token);
 
@@ -40,14 +42,18 @@ public class MovieRepository : IMovieRepository
 
         var genres = await GetGenresForMovie(movie.Id, token);
 
-        return new MovieWithGenres
+        var ratingResults = await _ratingRepository.GetRatingAsync(id, userId, token);
+
+        return new MovieWithGenresAndRating
         {
             Movie = movie,
-            Genres = genres
+            Genres = genres,
+            Rating = ratingResults.Item1,
+            UserRating = ratingResults.Item2
         };
     }
 
-    public async Task<MovieWithGenres?> GetBySlugAsync(string slug, CancellationToken token = default)
+    public async Task<MovieWithGenresAndRating?> GetBySlugAsync(string slug, Guid? userId = default, CancellationToken token = default)
     {
         if (string.IsNullOrWhiteSpace(slug))
             return null;
@@ -62,33 +68,54 @@ public class MovieRepository : IMovieRepository
 
         var genres = await GetGenresForMovie(movie.Id, token);
 
-        return new MovieWithGenres
+        var ratingResults = await _ratingRepository.GetRatingAsync(movie.Id, userId, token); ;
+
+        return new MovieWithGenresAndRating
         {
             Movie = movie,
-            Genres = genres
+            Genres = genres,
+            Rating = ratingResults.Item1,
+            UserRating = ratingResults.Item2,
         };
     }
 
-    public async Task<IEnumerable<MovieWithGenres>> GetAllAsync(CancellationToken token = default)
+    public async Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(Guid? userId = default, CancellationToken token = default)
     {
-        var movies = await _context.Movies.AsNoTracking().ToListAsync(token);
-        var genres = await _context.Genres.AsNoTracking().ToListAsync(token);
-
-        var lookup = genres
-            .GroupBy(g => g.MovieId)
-            .ToDictionary(
-                g => g.Key,
-                g => g.Select(x => x.Name).ToList()
-            );
-
-        return movies.Select(movie => new MovieWithGenres
+        var result = await _context.Movies
+        .AsNoTracking()
+        .Select(m => new MovieWithGenresAndRating
         {
-            Movie = movie,
-            Genres = lookup.GetValueOrDefault(movie.Id, new List<string>())
-        });
+            Movie = m,
+
+            Genres = _context.Genres
+                .Where(g => g.MovieId == m.Id)
+                .Select(g => g.Name)
+                .Distinct()
+                .ToList(),
+
+            Rating = _context.Ratings
+                .Where(r => r.MovieId == m.Id)
+                .Select(r => (float?)r.RatingValue)
+                .Average() != null
+                    ? (float)Math.Round(
+                        _context.Ratings
+                            .Where(r => r.MovieId == m.Id)
+                            .Average(r => (float)r.RatingValue), 1)
+                    : null,
+
+            UserRating = userId == null
+                ? null
+                : _context.Ratings
+                    .Where(r => r.MovieId == m.Id && r.UserId == userId)
+                    .Select(r => (int?)r.RatingValue)
+                    .FirstOrDefault()
+        })
+        .ToListAsync(token);
+
+        return result;
     }
 
-    public async Task<MovieWithGenres?> UpdateAsync(Movie movie, IEnumerable<string> genres, CancellationToken token = default)
+    public async Task<MovieWithGenresAndRating?> UpdateAsync(Movie movie, IEnumerable<string> genres, Guid? userId = default, CancellationToken token = default)
     {
         var existing = await _context.Movies.FindAsync(movie.Id, token);
 
@@ -114,12 +141,17 @@ public class MovieRepository : IMovieRepository
             });
         }
 
+        var oldRatings = await _ratingRepository.GetRatingAsync(movie.Id, userId, token); ;
+
         await _context.SaveChangesAsync(token);
 
-        return new MovieWithGenres
+        return new MovieWithGenresAndRating
         {
             Movie = existing,
-            Genres = genres.ToList()
+            Genres = genres.ToList(),
+            Rating = oldRatings.Item1,
+            UserRating = oldRatings.Item2,
+
         };
     }
 
