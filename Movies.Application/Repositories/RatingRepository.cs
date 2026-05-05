@@ -44,5 +44,23 @@ namespace Movies.Application.Repositories
             await _context.SaveChangesAsync(token);
             return true;
         }
+        
+        public async Task<bool> DeleteRatingAsync(Guid movieId, Guid userId, CancellationToken token = default)
+        {
+            var rating = await _context.Ratings
+                .FirstOrDefaultAsync(r =>
+                    r.MovieId == movieId &&
+                    r.UserId == userId,
+                    token);
+
+            if (rating != null)
+            {
+                _context.Ratings.Remove(rating);
+                await _context.SaveChangesAsync(token);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

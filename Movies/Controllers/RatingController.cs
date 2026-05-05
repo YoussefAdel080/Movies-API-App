@@ -25,5 +25,16 @@ namespace Movies.Controllers
 
             return result ? Ok() : NotFound();
         }
+
+        [Authorize]
+        [HttpPut(ApiEndpoints.Movies.DeleteRating)]
+        public async Task<IActionResult> DeleteRating([FromRoute] Guid id, CancellationToken token = default)
+        {
+            var userId = HttpContext.GetUserId();
+
+            var result = await _ratingService.DeleteRatingAsync(id, userId!.Value, token);
+
+            return result ? Ok() : NotFound();
+        }
     }
 }

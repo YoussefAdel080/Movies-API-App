@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using Movies.Application.Contexts;
 using Movies.Application.Repositories;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Movies.Application.Services
 {
@@ -45,6 +46,11 @@ namespace Movies.Application.Services
             }
 
             return await _ratingRepository.RateMovieAsync(movieId, userId, rating, token);
+        }
+
+        public async Task<bool> DeleteRatingAsync(Guid movieId, Guid userId, CancellationToken token)
+        {
+            return await _ratingRepository.DeleteRatingAsync(movieId, userId, token);
         }
     }
 }
