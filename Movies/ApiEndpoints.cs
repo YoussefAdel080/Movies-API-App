@@ -20,7 +20,7 @@
         public class Ratings
         {
             private const string Base = $"{ApiBase}/ratings";
-            private const string GetUserRatings = $"{Base}/me";
+            public const string GetUserRatings = $"{Base}/me";
 
         }
     }

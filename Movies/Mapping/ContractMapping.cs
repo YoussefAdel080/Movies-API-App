@@ -35,19 +35,16 @@ namespace Movies.Mapping
                 UserRating = userRating
             };
         }
-        public static MoviesResponse MapToResponse(
-        this IEnumerable<Movie> movies,
-        Dictionary<Guid, List<string>> genresLookup)
+
+        public static IEnumerable<MovieRatingResponse> MapToResponse(this IEnumerable<MovieRating> ratings)
         {
-           return new MoviesResponse
-           {
-                Items = movies.Select(movie =>
-                movie.MapToResponse(
-                    genresLookup.ContainsKey(movie.Id)
-                    ? genresLookup[movie.Id]
-                    : new List<string>(), null, null
-                    ))
-           };
+            return ratings.Select(r => 
+                new MovieRatingResponse {
+                        Rating = r.Rating,
+                        Slug = r.Slug,
+                        MovieId = r.MovieId,
+                    }
+                );
         }
     }
 }

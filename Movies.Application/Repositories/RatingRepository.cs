@@ -62,5 +62,20 @@ namespace Movies.Application.Repositories
 
             return false;
         }
+
+        public async Task<IEnumerable<MovieRating>> GetRatingsForUserAsync(Guid userId, CancellationToken token = default)
+        {
+            var result = await _context.Ratings
+                .Where(r => r.UserId == userId)
+                .Select(r => new MovieRating
+                {
+                    Rating = r.RatingValue,
+                    MovieId = r.MovieId,
+                    Slug = r.Movie.Slug
+                })
+                .ToListAsync(token);
+
+            return result ?? new List<MovieRating>();
+        }
     }
 }
