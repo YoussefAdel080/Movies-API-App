@@ -60,6 +60,8 @@ namespace Movies.Mapping
                 SortField = request.SortBy?.Trim('+', '-'),
                 SortOrder = request.SortBy is null ? SortOrder.Unsorted :
                 request.SortBy.StartsWith('+') ? SortOrder.Ascending : SortOrder.Descending,
+                Page = request.Page,
+                PageSize = request.PageSize,
             };
         }
 

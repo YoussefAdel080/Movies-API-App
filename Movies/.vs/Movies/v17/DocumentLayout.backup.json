@@ -3,17 +3,42 @@
   "WorkspaceRootPath": "C:\\GitHub\\Movies-API-App\\Movies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\mapping\\contractmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:mapping\\contractmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\models\\getallmoviesoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\repositories\\iratingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\validators\\getallmoviesoptionsvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\responses\\pagedresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\requests\\pagedrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|c:\\github\\movies-api-app\\movies\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9B6FBD-4531-48AA-9B64-C73D04581B31}|Movies.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\responses\\moviesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\repositories\\imovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\repositories\\movierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\requests\\getallmoviesrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD0D259-7428-457D-AC48-7E5FE176DE74}|..\\Movies.Application\\Movies.Application.csproj|c:\\github\\movies-api-app\\movies.application\\services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6B23E7-8645-4EE2-B22C-E345A7104A5E}|..\\Movies.Contracts\\Movies.Contracts.csproj|c:\\github\\movies-api-app\\movies.contracts\\requests\\createmovierequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,58 +48,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 245,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PagedResponse.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\PagedResponse.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Responses\\PagedResponse.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\PagedResponse.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Responses\\PagedResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T14:56:49.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MoviesResponse.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\MoviesResponse.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Responses\\MoviesResponse.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Responses\\MoviesResponse.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Responses\\MoviesResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T14:54:52.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MovieRepository.cs",
-              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\MovieRepository.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Application\\Repositories\\MovieRepository.cs",
-              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\MovieRepository.cs",
-              "RelativeToolTip": "..\\Movies.Application\\Repositories\\MovieRepository.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAwwFsAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T12:46:12.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetAllMoviesOptionsValidator.cs",
-              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Validators\\GetAllMoviesOptionsValidator.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Application\\Validators\\GetAllMoviesOptionsValidator.cs",
-              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Validators\\GetAllMoviesOptionsValidator.cs",
-              "RelativeToolTip": "..\\Movies.Application\\Validators\\GetAllMoviesOptionsValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T12:41:36.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ContractMapping.cs",
               "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Mapping\\ContractMapping.cs",
               "RelativeDocumentMoniker": "Mapping\\ContractMapping.cs",
               "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Mapping\\ContractMapping.cs",
               "RelativeToolTip": "Mapping\\ContractMapping.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAIwD4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAiwD8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:27:25.914Z",
+              "WhenOpened": "2026-05-08T14:53:51.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetAllMoviesOptions.cs",
-              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Models\\GetAllMoviesOptions.cs",
-              "RelativeDocumentMoniker": "..\\Movies.Application\\Models\\GetAllMoviesOptions.cs",
-              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Models\\GetAllMoviesOptions.cs",
-              "RelativeToolTip": "..\\Movies.Application\\Models\\GetAllMoviesOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "IMovieService.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Services\\IMovieService.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Application\\Services\\IMovieService.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Services\\IMovieService.cs",
+              "RelativeToolTip": "..\\Movies.Application\\Services\\IMovieService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:25:08.09Z",
+              "WhenOpened": "2026-05-08T14:49:12.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MovieService.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Services\\MovieService.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Application\\Services\\MovieService.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Services\\MovieService.cs",
+              "RelativeToolTip": "..\\Movies.Application\\Services\\MovieService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowDwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T14:49:08.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MovieRepository.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\MovieRepository.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Application\\Repositories\\MovieRepository.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\MovieRepository.cs",
+              "RelativeToolTip": "..\\Movies.Application\\Repositories\\MovieRepository.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAgwPEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:49:07.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetAllMoviesRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\GetAllMoviesRequest.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Requests\\GetAllMoviesRequest.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\GetAllMoviesRequest.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Requests\\GetAllMoviesRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:47:35.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateMovieRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Requests\\CreateMovieRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:27:39.62Z",
               "EditorCaption": ""
             },
             {
@@ -92,6 +169,62 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1928210406:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRatingRepository.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\IRatingRepository.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Application\\Repositories\\IRatingRepository.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\IRatingRepository.cs",
+              "RelativeToolTip": "..\\Movies.Application\\Repositories\\IRatingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:27:11.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMovieRepository.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\IMovieRepository.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Application\\Repositories\\IMovieRepository.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Application\\Repositories\\IMovieRepository.cs",
+              "RelativeToolTip": "..\\Movies.Application\\Repositories\\IMovieRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:27:06.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PagedRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\PagedRequest.cs",
+              "RelativeDocumentMoniker": "..\\Movies.Contracts\\Requests\\PagedRequest.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies.Contracts\\Requests\\PagedRequest.cs",
+              "RelativeToolTip": "..\\Movies.Contracts\\Requests\\PagedRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T13:21:04.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\GitHub\\Movies-API-App\\Movies\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwCAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T12:53:47.952Z",
+              "EditorCaption": ""
             }
           ]
         }

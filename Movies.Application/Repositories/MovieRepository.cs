@@ -117,6 +117,11 @@ public class MovieRepository : IMovieRepository
             };
         }
 
+        //Paginatiopn
+        query = query
+            .Skip((options.Page - 1) * options.PageSize)
+            .Take(options.PageSize);
+
         // Projection
         var result = await query
             .Select(m => new MovieWithGenresAndRating
@@ -222,4 +227,24 @@ public class MovieRepository : IMovieRepository
         var movieExiste = await _context.Movies.FindAsync(id, token);
         return movieExiste != null;
     }
+    public async Task<int> GetCountAsync(string? title, int? yearOfRelease, CancellationToken token = default)
+    {
+        var query = _context.Movies.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(title))
+        {
+            query = query.Where(m =>
+                EF.Functions.Like(m.Title, $"%{title}%"));
+        }
+
+        if (yearOfRelease.HasValue)
+        {
+            query = query.Where(m =>
+                m.YearOfRelease == yearOfRelease.Value);
+        }
+
+        return await query.CountAsync(token);
+    }
+
+
 }

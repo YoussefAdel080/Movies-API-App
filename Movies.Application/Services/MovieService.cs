@@ -56,5 +56,10 @@ namespace Movies.Application.Services
             return movieWithGenres;
         }
 
+        public Task<int> GetCountAsync(string? title, int? yearOfRelease, CancellationToken token = default)
+        {
+            return _movieRepository.GetCountAsync(title, yearOfRelease, token);
+        }
+
     }
 }

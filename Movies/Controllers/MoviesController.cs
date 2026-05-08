@@ -28,9 +28,14 @@ public class MoviesController : ControllerBase
 
         var movies = await _movieService.GetAllAsync(options, token);
 
+        var count = await _movieService.GetCountAsync(request.Title, request.Year, token);
+
         var response = new MoviesResponse
         {
-            Items = movies.Select(m => m.Movie.MapToResponse(m.Genres, m.Rating, m.UserRating))
+            Items = movies.Select(m => m.Movie.MapToResponse(m.Genres, m.Rating, m.UserRating)),
+            Page = request.Page,
+            PageSize = request.PageSize,
+            Count = count,
         };
 
         return Ok(response);
