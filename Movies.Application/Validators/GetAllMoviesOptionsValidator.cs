@@ -5,10 +5,16 @@ namespace Movies.Application.Validators
 {
     public class GetAllMoviesOptionsValidator : AbstractValidator<GetAllMoviesOptions>
     {
+        private readonly static string[] AcceptableSortFields = new[] { "title", "year" };
+
         public GetAllMoviesOptionsValidator()
         {
             RuleFor(x => x.YearOfRelease)
                 .LessThanOrEqualTo(DateTime.UtcNow.Year);
+
+            RuleFor(x => x.SortField)
+                .Must(x => x is null || AcceptableSortFields.Contains(x, StringComparer.OrdinalIgnoreCase))
+                .WithMessage("You can only sort by Title or Year of release");
         }
     }
 }

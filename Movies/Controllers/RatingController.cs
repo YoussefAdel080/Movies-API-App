@@ -28,7 +28,7 @@ namespace Movies.Controllers
         }
 
         [Authorize]
-        [HttpPut(ApiEndpoints.Movies.DeleteRating)]
+        [HttpDelete(ApiEndpoints.Movies.DeleteRating)]
         public async Task<IActionResult> DeleteRating([FromRoute] Guid id, CancellationToken token = default)
         {
             var userId = HttpContext.GetUserId();

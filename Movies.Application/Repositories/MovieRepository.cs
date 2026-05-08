@@ -81,43 +81,75 @@ public class MovieRepository : IMovieRepository
 
     public async Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(GetAllMoviesOptions options, CancellationToken token = default)
     {
-        var result = await _context.Movies
+        var query = _context.Movies
         .AsNoTracking()
-        .Where(m =>
-            (string.IsNullOrWhiteSpace(options.Title) ||
-             m.Title.ToLower().Contains(options.Title.ToLower())) &&
+        .AsQueryable();
 
-            (!options.YearOfRelease.HasValue ||
-             m.YearOfRelease == options.YearOfRelease.Value)
-        )
-        .Select(m => new MovieWithGenresAndRating
+        // Filtering
+        if (!string.IsNullOrWhiteSpace(options.Title))
         {
-            Movie = m,
+            query = query.Where(m =>
+                EF.Functions.Like(m.Title, $"%{options.Title}%"));
+        }
 
-            Genres = _context.Genres
-                .Where(g => g.MovieId == m.Id)
-                .Select(g => g.Name)
-                .Distinct()
-                .ToList(),
+        if (options.YearOfRelease.HasValue)
+        {
+            query = query.Where(m =>
+                m.YearOfRelease == options.YearOfRelease.Value);
+        }
 
-            Rating = _context.Ratings
-                .Where(r => r.MovieId == m.Id)
-                .Select(r => (float?)r.RatingValue)
-                .Average() != null
-                    ? (float)Math.Round(
-                        _context.Ratings
-                            .Where(r => r.MovieId == m.Id)
-                            .Average(r => (float)r.RatingValue), 1)
-                    : null,
+        // Sorting
+        if (!string.IsNullOrWhiteSpace(options.SortField))
+        {
+            var descending = options.SortOrder == SortOrder.Descending;
 
-            UserRating = options.UserId == null
-                ? null
-                : _context.Ratings
-                    .Where(r => r.MovieId == m.Id && r.UserId == options.UserId)
-                    .Select(r => (int?)r.RatingValue)
-                    .FirstOrDefault()
-        })
-        .ToListAsync(token);
+            query = options.SortField.ToLower() switch
+            {
+                "title" => descending
+                    ? query.OrderByDescending(m => m.Title)
+                    : query.OrderBy(m => m.Title),
+
+                "year" => descending
+                    ? query.OrderByDescending(m => m.YearOfRelease)
+                    : query.OrderBy(m => m.YearOfRelease),
+
+                _ => query
+            };
+        }
+
+        // Projection
+        var result = await query
+            .Select(m => new MovieWithGenresAndRating
+            {
+                Movie = m,
+
+                Genres = _context.Genres
+                    .Where(g => g.MovieId == m.Id)
+                    .Select(g => g.Name)
+                    .Distinct()
+                    .ToList(),
+
+                Rating = _context.Ratings
+                    .Where(r => r.MovieId == m.Id)
+                    .Select(r => (float?)r.RatingValue)
+                    .Average() != null
+                        ? (float?)Math.Round(
+                            _context.Ratings
+                                .Where(r => r.MovieId == m.Id)
+                                .Average(r => r.RatingValue),
+                            1)
+                        : null,
+
+                UserRating = options.UserId == null
+                    ? null
+                    : _context.Ratings
+                        .Where(r =>
+                            r.MovieId == m.Id &&
+                            r.UserId == options.UserId)
+                        .Select(r => (int?)r.RatingValue)
+                        .FirstOrDefault()
+            })
+            .ToListAsync(token);
 
         return result;
     }
