@@ -79,10 +79,17 @@ public class MovieRepository : IMovieRepository
         };
     }
 
-    public async Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(Guid? userId = default, CancellationToken token = default)
+    public async Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(GetAllMoviesOptions options, CancellationToken token = default)
     {
         var result = await _context.Movies
         .AsNoTracking()
+        .Where(m =>
+            (string.IsNullOrWhiteSpace(options.Title) ||
+             m.Title.ToLower().Contains(options.Title.ToLower())) &&
+
+            (!options.YearOfRelease.HasValue ||
+             m.YearOfRelease == options.YearOfRelease.Value)
+        )
         .Select(m => new MovieWithGenresAndRating
         {
             Movie = m,
@@ -103,10 +110,10 @@ public class MovieRepository : IMovieRepository
                             .Average(r => (float)r.RatingValue), 1)
                     : null,
 
-            UserRating = userId == null
+            UserRating = options.UserId == null
                 ? null
                 : _context.Ratings
-                    .Where(r => r.MovieId == m.Id && r.UserId == userId)
+                    .Where(r => r.MovieId == m.Id && r.UserId == options.UserId)
                     .Select(r => (int?)r.RatingValue)
                     .FirstOrDefault()
         })

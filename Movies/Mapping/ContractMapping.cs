@@ -6,7 +6,8 @@ namespace Movies.Mapping
 {
     public static class ContractMapping
     {
-        public static Movie MapToMovie(this CreateMovieRequest request) {
+        public static Movie MapToMovie(this CreateMovieRequest request)
+        {
             return new Movie
             {
                 Id = Guid.NewGuid(),
@@ -14,7 +15,8 @@ namespace Movies.Mapping
                 YearOfRelease = request.YearOfRelease,
             };
         }
-        public static Movie MapToMovie(this UpdateMovieRequest request, Guid id) {
+        public static Movie MapToMovie(this UpdateMovieRequest request, Guid id)
+        {
             return new Movie
             {
                 Id = id,
@@ -23,7 +25,8 @@ namespace Movies.Mapping
             };
         }
 
-        public static MovieResponse MapToResponse(this Movie request, IEnumerable<string> genres, float? rating, int? userRating) {
+        public static MovieResponse MapToResponse(this Movie request, IEnumerable<string> genres, float? rating, int? userRating)
+        {
             return new MovieResponse
             {
                 Id = request.Id,
@@ -38,13 +41,29 @@ namespace Movies.Mapping
 
         public static IEnumerable<MovieRatingResponse> MapToResponse(this IEnumerable<MovieRating> ratings)
         {
-            return ratings.Select(r => 
-                new MovieRatingResponse {
-                        Rating = r.Rating,
-                        Slug = r.Slug,
-                        MovieId = r.MovieId,
-                    }
+            return ratings.Select(r =>
+                new MovieRatingResponse
+                {
+                    Rating = r.Rating,
+                    Slug = r.Slug,
+                    MovieId = r.MovieId,
+                }
                 );
+        }
+
+        public static GetAllMoviesOptions MapToOptions(this GetAllMoviesRequest request)
+        {
+            return new GetAllMoviesOptions
+            {
+                Title = request.Title,
+                YearOfRelease = request.Year
+            };
+        }
+
+        public static GetAllMoviesOptions WithUser(this GetAllMoviesOptions options, Guid? userId)
+        {
+            options.UserId = userId;
+            return options;
         }
     }
 }

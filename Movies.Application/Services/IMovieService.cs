@@ -10,7 +10,7 @@ namespace Movies.Application.Services
 
         Task<MovieWithGenresAndRating?> GetBySlugAsync(string slug, Guid? userId = default, CancellationToken token = default);
 
-        Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(Guid? userId = default,CancellationToken token = default);
+        Task<IEnumerable<MovieWithGenresAndRating>> GetAllAsync(GetAllMoviesOptions options,CancellationToken token = default);
 
         Task<MovieWithGenresAndRating?> UpdateAsync(Movie movie, IEnumerable<string> genres, Guid? userId = default, CancellationToken token = default);
 
